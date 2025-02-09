@@ -1,0 +1,17 @@
+name = "Future Imperfect"
+license = "MIT"
+licenselink = "https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md"
+description = "A futuristic and sleek Hugo theme for bloggers, writers, and content creators."
+homepage = "https://github.com/jpescador/hugo-future-imperfect"
+tags = ["blog", "responsive", "minimal", "dark mode", "future", "ai"]
+features = ["responsive", "future design", "dark mode", "customizable"]
+min_version = "0.57.0"
+
+[author]
+  name = "JPescador"
+  homepage = "https://github.com/jpescador"
+
+[original]
+  author = "HTML5 UP"
+  homepage = "https://html5up.net"
+  repo = "https://github.com/jpescador/hugo-future-imperfect"
