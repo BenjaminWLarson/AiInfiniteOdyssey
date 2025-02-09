@@ -1,0 +1,16 @@
+# Ignore Hugo-generated files
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore log and temporary files
+*.log
+*.tmp
+
+# Ignore image backups
+static/images/*.psd
+static/images/*.xcf
