@@ -1,0 +1,14 @@
+baseURL = "https://AiInfiniteOdyssey.com"
+languageCode = "en-us"
+title = "AI Infinite Odyssey"
+theme = "future-imperfect"
+
+[params]
+  description = "Exploring AI's infinite possibilities."
+  dateFormat = "January 2, 2006"
+  background = "images/ai-futuristic-bg.jpg"
+  landingTitle = "🚀 AI Infinite Odyssey"
+  landingSubtitle = "A Podcast About AI & The Future"
+
+[markup.goldmark.renderer]
+  unsafe = true
