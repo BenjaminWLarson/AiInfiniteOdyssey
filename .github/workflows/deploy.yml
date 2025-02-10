@@ -23,6 +23,12 @@ jobs:
       - name: Build Site
         run: hugo --minify --cleanDestinationDir
 
+    - name: Debug: Check Public Directory Before Deploy
+        run: |
+          echo "Checking public/ contents before deployment..."
+          ls -R public || echo "Public directory is empty!"
+
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
