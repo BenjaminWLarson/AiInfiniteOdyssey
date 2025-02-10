@@ -17,9 +17,9 @@ jobs:
         submodules: true
 
     - name: Hugo Deploy GitHub Pages
-      uses: benjaminlarson/AiInfiniteOdyssey@main
+      uses: BenjaminWLarson/AiInfiniteOdyssey@main
       env:
         HUGO_VERSION: 0.68.3
-        TARGET_REPO: benjaminlarson/AiInfiniteOdyssey.github.io
+        TARGET_REPO: BenjaminWLarson/AiInfiniteOdyssey.github.io
         TOKEN: ${{ secrets.GH_PAT }}
         CNAME: www.AiInfiniteOdyssey.com
