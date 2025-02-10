@@ -16,5 +16,8 @@ theme = "future-imperfect"  # This MUST match the folder name in /themes/
     github = "https://github.com/BenjaminWLarson"
     twitter = "https://twitter.com/"
 
+publishDir = "public"
+
+
 # Disable RSS feeds and taxonomy pages to prevent unnecessary index.xml files
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
