@@ -21,9 +21,9 @@ jobs:
           extended: true  # Required for Future Imperfect theme
 
       - name: Build Site
-        run: |
+        run: 
           echo "Building Hugo site..."
-          hugo --minify --cleanDestinationDir --destination public --verbose
+          hugo --minify --cleanDestinationDir --destination public 
 
       - name: Debug: Check Public Directory Before Deploy
         run: 
