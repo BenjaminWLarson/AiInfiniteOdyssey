@@ -7,7 +7,9 @@ body, h1, h2, h3, p, ul {
 }
 
 body {
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    background: url("/images/ai-futuristic-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0f3460; /* Fallback color */
     text-align: center;
     padding: 40px;
 }
