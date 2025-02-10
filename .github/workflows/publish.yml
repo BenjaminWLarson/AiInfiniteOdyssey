@@ -4,22 +4,67 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+
+env:
+  HUGO_ENV: production
+  HUGO_VERSION: 'latest'
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-    - name: Checkout main
-      uses: actions/checkout@v2
-      with:
-        submodules: true
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Hugo Deploy GitHub Pages
-      uses: BenjaminWLarson/AiInfiniteOdyssey@main
-      env:
-        HUGO_VERSION: 0.68.3
-        TARGET_REPO: BenjaminWLarson/AiInfiniteOdyssey.github.io
-        TOKEN: ${{ secrets.GH_PAT }}
-        CNAME: www.AiInfiniteOdyssey.com
+      - name: Verify Hugo Environment
+        run: |
+          echo "HUGO_ENV: $HUGO_ENV"
+          echo "HUGO_VERSION: $HUGO_VERSION"
+
+      - name: Cache Hugo Resources
+        uses: actions/cache@v3
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build Hugo Site
+        run: |
+          hugo --minify --cleanDestinationDir --destination public --verbose || exit 1
+
+      - name: Debug Public Directory
+        run: ls -la public/
+
+      - name: Verify Build Output
+        run: |
+          if [ ! -d "public" ] || [ -z "$(ls -A public)" ]; then
+            echo "Error: public/ directory is empty or missing!"
+            exit 1
+          fi
+          echo "✅ Build output verified"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./public
+          publish_branch: gh-pages
+          force_orphan: true
+          cname: aiinfiniteodyssey.com
+          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
