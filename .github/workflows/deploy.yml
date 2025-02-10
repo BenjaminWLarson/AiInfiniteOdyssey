@@ -21,7 +21,7 @@ jobs:
           extended: true  # Required for Future Imperfect theme
 
       - name: Build Site
-        run: hugo --minify --cleanDestinationDir -v
+        run: hugo --minify --cleanDestinationDir --verbose --debug
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

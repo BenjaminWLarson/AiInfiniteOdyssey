@@ -1,6 +1,6 @@
 ---
 title: "Welcome to AI Infinite Odyssey"
-date: 2025-02-10
+date: 2025-02-08
 description: "Your AI Journey Begins Here"
 draft: false
 ---

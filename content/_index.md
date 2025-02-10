@@ -1,6 +1,6 @@
 ---
 title: "AI Infinite Odyssey"
-date: 2025-02-10
+date: 2025-02-08
 description: "A podcast exploring the infinite possibilities of Artificial Intelligence."
 draft: false
 ---
