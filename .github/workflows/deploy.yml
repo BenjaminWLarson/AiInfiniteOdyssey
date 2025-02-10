@@ -21,13 +21,13 @@ jobs:
 
       - name: Build Site
         run: |
-          hugo --minify --cleanDestinationDir
+          hugo --minify --cleanDestinationDir  # This ensures a clean build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}  # Using Personal Access Token
-          publish_dir: ./public
+          publish_dir: public  # Only deploy contents of public/
           publish_branch: gh-pages
           force_orphan: true
           cname: AiInfiniteOdyssey.com
