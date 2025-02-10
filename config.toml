@@ -17,6 +17,9 @@ theme = "future-imperfect"  # This MUST match the folder name in /themes/
   [[params.social]]
     name = "Twitter"
     url = "https://twitter.com/"
+  [[params.social]]
+    name = "Email"
+    url = "mailto:your@email.com"  # This fixes the 404.html error
 
 # Ensure Hugo writes the site output to public/
 publishDir = "public"
