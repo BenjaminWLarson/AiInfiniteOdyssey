@@ -9,6 +9,7 @@ theme = "future-imperfect"  # This MUST match the folder name in /themes/
   background = "images/ai-futuristic-bg.jpg"
   landingTitle = "🚀 AI Infinite Odyssey"
   landingSubtitle = "A Podcast About AI & The Future"
+  mainSections = ["episodes"]
 
   # Fix for deprecated .Site.Social
   [params.social]
