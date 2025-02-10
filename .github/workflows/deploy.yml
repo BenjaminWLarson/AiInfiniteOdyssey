@@ -29,4 +29,5 @@ jobs:
           personal_token: ${{ secrets.GH_PAT }}  # Using Personal Access Token
           publish_dir: ./public
           publish_branch: gh-pages
+          force_orphan: true
           cname: AiInfiniteOdyssey.com

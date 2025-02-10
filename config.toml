@@ -12,3 +12,7 @@ theme = "future-imperfect"
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[taxonomies]
+  category = ""
+  tag = ""
