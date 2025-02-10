@@ -23,3 +23,6 @@ From the **deep mechanics of AI** to **the societal, ethical, and economic impac
 Available on **Spotify, Apple Podcasts, Google Podcasts, and all platforms.**  
 
 Stay tuned – **the future is infinite, and the odyssey begins now.**
+
+### 📬 **Subscribe Now!**
+Don't miss an episode – subscribe to our newsletter for updates.
