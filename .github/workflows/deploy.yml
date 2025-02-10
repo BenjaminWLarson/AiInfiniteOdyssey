@@ -31,7 +31,7 @@ jobs:
           ls -R public || echo "Public directory is empty!"
 
       - name: Fail if Public Directory is Empty
-        run: |
+        run:
           if [ ! -d "public" ] || [ -z "$(ls -A public)" ]; then
             echo "Error: public/ folder is empty! Hugo build failed."
             exit 1
