@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4  # No need for submodules
+        uses: actions/checkout@v4  
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -21,13 +21,21 @@ jobs:
           extended: true  # Required for Future Imperfect theme
 
       - name: Build Site
-        run: hugo --minify --cleanDestinationDir
-
-    - name: Debug: Check Public Directory Before Deploy
         run: |
-          echo "Checking public/ contents before deployment..."
+          echo "Building Hugo site..."
+          hugo --minify --cleanDestinationDir --destination public --verbose
+
+      - name: Debug: Check Public Directory Before Deploy
+        run: |
+          echo "Checking public/ directory before deployment..."
           ls -R public || echo "Public directory is empty!"
 
+      - name: Fail if Public Directory is Empty
+        run: |
+          if [ ! -d "public" ] || [ -z "$(ls -A public)" ]; then
+            echo "Error: public/ folder is empty! Hugo build failed."
+            exit 1
+          fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
