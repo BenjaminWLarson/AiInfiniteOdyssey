@@ -12,25 +12,16 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive  # Ensures all submodules are cloned
-
-      - name: Update Submodules
-        run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive
+        uses: actions/checkout@v4  # No need for submodules
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          extended: true  # Required for some themes
+          extended: true  # Required for Future Imperfect theme
 
       - name: Build Site
-        run: |
-          hugo --minify --cleanDestinationDir
-          ls -la themes/  # Debugging: Ensure theme exists
+        run: hugo --minify --cleanDestinationDir
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
