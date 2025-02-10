@@ -26,7 +26,7 @@ jobs:
           hugo --minify --cleanDestinationDir --destination public --verbose
 
       - name: Debug: Check Public Directory Before Deploy
-        run: |
+        run: 
           echo "Checking public/ directory before deployment..."
           ls -R public || echo "Public directory is empty!"
 
