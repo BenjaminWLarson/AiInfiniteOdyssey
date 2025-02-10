@@ -1,6 +1,6 @@
 ---
 title: "What is AI? A Beginner's Guide"
-date: TBD
+date: 2025-12-15
 description: "We break down what AI really is and how it's shaping our world."
 tags: ["AI", "Neural Networks", "Deep Learning"]
 ---
