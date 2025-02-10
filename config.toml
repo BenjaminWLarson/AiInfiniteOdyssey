@@ -11,15 +11,10 @@ theme = "future-imperfect"  # This MUST match the folder name in /themes/
   landingSubtitle = "A Podcast About AI & The Future"
 
   # Fix for deprecated .Site.Social
-  [[params.social]]
-    name = "GitHub"
-    url = "https://github.com/BenjaminWLarson"
-  [[params.social]]
-    name = "Twitter"
-    url = "https://twitter.com/"
-  [[params.social]]
-    name = "Email"
-    url = "mailto:your@email.com"  # This fixes the 404.html error
+  [params.social]
+    email = "your@email.com"
+    github = "https://github.com/BenjaminWLarson"
+    twitter = "https://twitter.com/"
 
 # Ensure Hugo writes the site output to public/
 publishDir = "public"
