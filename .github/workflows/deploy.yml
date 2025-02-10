@@ -20,6 +20,11 @@ jobs:
           hugo-version: 'latest'
           extended: true  # Required for Future Imperfect theme
 
+      - name: Prebuild check
+        run: 
+          echo "looking to see what there is to build..."
+          hugo list all
+
       - name: Build Site
         run: 
           echo "Building Hugo site..."
