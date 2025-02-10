@@ -17,5 +17,5 @@ theme = "future-imperfect"
   category = ""
   tag = ""
 
-# Force Hugo to always output to the public directory
-publishDir = "public"
+# Disable RSS feeds and taxonomy pages to prevent unnecessary index.xml files
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]

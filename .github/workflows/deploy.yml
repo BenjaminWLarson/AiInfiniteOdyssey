@@ -21,14 +21,13 @@ jobs:
 
       - name: Build Site
         run: |
-          rm -rf public  # Ensure no old files
-          hugo --minify --cleanDestinationDir --destination public  # Force output to public/
+          hugo --minify --cleanDestinationDir  # Generates the site automatically
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: public
+          publish_dir: ./public  # Default Hugo output folder
           publish_branch: gh-pages
           force_orphan: true
           cname: AiInfiniteOdyssey.com
