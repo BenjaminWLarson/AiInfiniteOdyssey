@@ -25,7 +25,7 @@ jobs:
           echo "Building Hugo site..."
           hugo --minify --cleanDestinationDir --destination public 
 
-      - name: Debug: Check Public Directory Before Deploy
+      - name: Check Public Directory Before Deploy
         run: 
           echo "Checking public/ directory before deployment..."
           ls -R public || echo "Public directory is empty!"
