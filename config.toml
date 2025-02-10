@@ -16,3 +16,6 @@ theme = "future-imperfect"
 [taxonomies]
   category = ""
   tag = ""
+
+# Force Hugo to always output to the public directory
+publishDir = "public"
