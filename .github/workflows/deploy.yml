@@ -14,7 +14,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          submodules: true  # Ensures theme submodule is cloned
+          submodules: recursive  # Ensures all submodules are cloned
+
+      - name: Update Submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -25,6 +30,7 @@ jobs:
       - name: Build Site
         run: |
           hugo --minify --cleanDestinationDir
+          ls -la themes/  # Debugging: Ensure theme exists
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
