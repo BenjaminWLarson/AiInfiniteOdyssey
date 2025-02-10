@@ -46,7 +46,7 @@ jobs:
 
       - name: Build Hugo Site
         run: |
-          hugo --minify --cleanDestinationDir --destination public --verbose || exit 1
+          hugo --minify --cleanDestinationDir --destination public || exit 1
 
       - name: Debug Public Directory
         run: ls -la public/
