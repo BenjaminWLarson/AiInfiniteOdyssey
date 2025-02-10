@@ -1,3 +1,8 @@
+baseURL = "https://AiInfiniteOdyssey.com"
+languageCode = "en-us"
+title = "AI Infinite Odyssey"
+theme = "future-imperfect"  # This MUST match the folder name in /themes/
+
 [params]
   description = "Exploring AI's infinite possibilities."
   dateFormat = "January 2, 2006"
@@ -12,3 +17,9 @@
   [[params.social]]
     name = "Twitter"
     url = "https://twitter.com/"
+
+# Ensure Hugo writes the site output to public/
+publishDir = "public"
+
+# Disable RSS feeds and taxonomy pages to prevent unnecessary index.xml files
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
