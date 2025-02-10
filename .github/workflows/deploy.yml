@@ -13,21 +13,24 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          submodules: true  # Ensures theme submodule is cloned
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
+          extended: true  # Required for some themes
 
       - name: Build Site
         run: |
-          hugo --minify --cleanDestinationDir  # Generates the site automatically
+          hugo --minify --cleanDestinationDir
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./public  # Default Hugo output folder
+          publish_dir: ./public
           publish_branch: gh-pages
           force_orphan: true
           cname: AiInfiniteOdyssey.com
