@@ -1,7 +1,7 @@
 baseURL = "https://AiInfiniteOdyssey.com"
 languageCode = "en-us"
 title = "AI Infinite Odyssey"
-theme = "future-imperfect"  # This MUST match the folder name in /themes/
+theme = "PaperMod"  # This MUST match the folder name in /themes/
 
 [params]
   description = "Exploring AI's infinite possibilities."
