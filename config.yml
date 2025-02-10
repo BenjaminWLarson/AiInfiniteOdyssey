@@ -1,7 +1,7 @@
 baseURL: "https://aiinfiniteodyssey.com/"
 title: "AI Infinite Odyssey"
 paginate: 5
-theme: PaperMod
+theme: ananke
 
 enableRobotsTXT: true
 buildDrafts: false
