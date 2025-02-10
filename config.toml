@@ -1,1 +1,14 @@
-.Site.Params.Social
+[params]
+  description = "Exploring AI's infinite possibilities."
+  dateFormat = "January 2, 2006"
+  background = "images/ai-futuristic-bg.jpg"
+  landingTitle = "🚀 AI Infinite Odyssey"
+  landingSubtitle = "A Podcast About AI & The Future"
+
+  # Fix for deprecated .Site.Social
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/BenjaminWLarson"
+  [[params.social]]
+    name = "Twitter"
+    url = "https://twitter.com/"
